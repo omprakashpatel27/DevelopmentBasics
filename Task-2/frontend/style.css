@@ -1,0 +1,27 @@
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: Arial, sans-serif;
+}
+
+/* Style the table header (table column names) */
+th {
+	background-color: #f2f2f2;
+	text-align: left;
+}
+
+/* Style table cells */
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+/* Style alternating rows for better readability */
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+/* Style hover effect when hovering over rows */
+tr:hover {
+	background-color: #ccc;
+}

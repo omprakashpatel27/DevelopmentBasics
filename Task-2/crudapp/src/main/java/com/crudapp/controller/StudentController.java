@@ -3,6 +3,8 @@ package com.crudapp.controller;
 import com.crudapp.model.Student;
 import com.crudapp.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +16,11 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping("/health")
-    public String healthApi(){
-        return "Working...";
+    public ResponseEntity<String> healthApi(){
+        String apiData = "Working";
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Referrer-Policy", "strict-origin-when-cross-origin");
+        return ResponseEntity.ok().headers(headers).body(apiData);
     }
 
     @GetMapping("/fetch-all")
